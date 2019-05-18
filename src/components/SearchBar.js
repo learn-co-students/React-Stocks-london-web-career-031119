@@ -2,13 +2,11 @@ import React from 'react';
 
 const SearchBar = ({ handleFilter, handleSort }) =>
   <div>
-
     <strong>Sort by:</strong>
     <label>
       <input
-        type="radio"
+        type="checkbox"
         value="Alphabetically"
-        checked={null}
         onChange={
           (e) => handleSort(e.target.value)
         } />
@@ -16,9 +14,8 @@ const SearchBar = ({ handleFilter, handleSort }) =>
       </label>
     <label>
       <input
-        type="radio"
+        type="checkbox"
         value="Price"
-        checked={null}
         onChange={
           (e) => handleSort(e.target.value)
         } />
@@ -29,6 +26,7 @@ const SearchBar = ({ handleFilter, handleSort }) =>
     <label>
       <strong>Filter:</strong>
       <select onChange={(e) => handleFilter(e.target.value)}>
+        <option selected value="All">All</option>
         <option value="Tech">Tech</option>
         <option value="Sportswear">Sportswear</option>
         <option value="Finance">Finance</option>

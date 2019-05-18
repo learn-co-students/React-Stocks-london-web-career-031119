@@ -46,7 +46,9 @@ class MainContainer extends Component {
   filterStocks = (value) => {
     const { stocks } = this.state
     const filteredStocks = stocks.slice()
-    this.setState({ stocks: filteredStocks.filter(stock => stock.type === value) });
+    if (value !== 'All') {
+      this.setState({ stocks: filteredStocks.filter(stock => stock.type === value) });
+    } else { this.getStocks() }
   }
 
   render() {
