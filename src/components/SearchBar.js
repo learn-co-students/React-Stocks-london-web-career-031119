@@ -1,33 +1,41 @@
 import React from 'react';
 
-const SearchBar = () => {
-  return (
-    <div>
+const SearchBar = ({ handleFilter, handleSort }) =>
+  <div>
 
-      <strong>Sort by:</strong>
-      <label>
-        <input type="radio" value="Alphabetically" checked={null} onChange={null}/>
-        Alphabetically
+    <strong>Sort by:</strong>
+    <label>
+      <input
+        type="radio"
+        value="Alphabetically"
+        checked={null}
+        onChange={
+          (e) => handleSort(e.target.value)
+        } />
+      Alphabetically
       </label>
-      <label>
-        <input type="radio" value="Price" checked={null} onChange={null}/>
-        Price
+    <label>
+      <input
+        type="radio"
+        value="Price"
+        checked={null}
+        onChange={
+          (e) => handleSort(e.target.value)
+        } />
+      Price
       </label>
-      <br/>
+    <br />
 
-      <label>
-        <strong>Filter:</strong>
-        <select onChange={null}>
-          <option value="Tech">Tech</option>
-          <option value="Sportswear">Sportswear</option>
-          <option value="Finance">Finance</option>
-        </select>
-      </label>
+    <label>
+      <strong>Filter:</strong>
+      <select onChange={(e) => handleFilter(e.target.value)}>
+        <option value="Tech">Tech</option>
+        <option value="Sportswear">Sportswear</option>
+        <option value="Finance">Finance</option>
+      </select>
+    </label>
 
-
-    </div>
-  );
-}
+  </div>
 
 
 export default SearchBar;
