@@ -5,19 +5,25 @@ const SearchBar = ({ handleFilter, handleSort }) =>
     <strong>Sort by:</strong>
     <label>
       <input
-        type="checkbox"
+        type="radio"
         value="Alphabetically"
+        name="sortRadio"
         onChange={
-          (e) => handleSort(e.target.value)
+          (e) => {
+            handleSort(e.target.value)
+          }
         } />
       Alphabetically
       </label>
     <label>
       <input
-        type="checkbox"
+        type="radio"
         value="Price"
+        name="sortRadio"
         onChange={
-          (e) => handleSort(e.target.value)
+          (e) => {
+            handleSort(e.target.value)
+          }
         } />
       Price
       </label>
@@ -34,6 +40,7 @@ const SearchBar = ({ handleFilter, handleSort }) =>
     </label>
 
   </div>
+
 
 
 export default SearchBar;
